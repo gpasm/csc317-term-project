@@ -1,7 +1,7 @@
 body {
-    background: #fdf3dd;
+    background: #e0d1bc;
     margin: 0;
-    color: beige;
+    color: white;
     line-height: 1.5;
     letter-spacing: 0.4px;
     word-spacing: 0.4px;
@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background: green;
+    background: #56694f;
     position: sticky;
     box-sizing: border-box;
     top: 0;
@@ -23,7 +23,33 @@ header {
     padding: 1px;
     text-align: center;
     align-items: center;
+
+    color: #e0d1bc;
 }
+
+.first-text{
+    top: 0;
+    width: 100%;
+    padding: 1px;
+    text-align: center;
+    font-size: 50px;
+ }
+
+.front-image {
+    /* border-radius: 10px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 8px;
+ }
+
+ img {
+    height: 600px;
+    width: auto;
+    border-radius: 10px;
+    display: block;
+ }
 
 nav {
     position: relative;
