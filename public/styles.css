@@ -1,5 +1,3 @@
-
-
 body {
     background: #e0d1bc;
     margin: 0;
@@ -7,6 +5,14 @@ body {
     line-height: 1.5;
     letter-spacing: 0.4px;
     word-spacing: 0.4px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .title {
@@ -29,41 +35,41 @@ header {
     color: #e0d1bc;
 }
 
-.first-text{
+.first-text {
     top: 0;
     width: 100%;
     padding: 1px;
     text-align: center;
     font-size: 50px;
- }
+}
 
- .front-image {
+.front-image {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 8px;
- }
+}
 
- img {
+img {
     height: 600px;
     width: auto;
     border-radius: 10px;
     display: block;
- }
+}
 
- .image {
+.image {
     position: relative;
     display: inline-block;
     overflow: hidden;
 }
 
- .image-link {
+.image-link {
     text-decoration: none;
     position: relative;
     display: inline-block;
 }
 
- .shop-button {
+.shop-button {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -76,13 +82,15 @@ header {
     opacity: 1;
     transition: all 0.3s ease;
     cursor: pointer;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .image:hover .shop-button {
     opacity: 1;
-    pointer-events: auto; /* Allow interaction once visible */
-    transform: translate(-50%, 0%); /* Slight move for animation effect */
+    pointer-events: auto;
+    /* Allow interaction once visible */
+    transform: translate(-50%, 0%);
+    /* Slight move for animation effect */
 }
 
 
@@ -122,78 +130,87 @@ nav ul {
 nav ul a {
     margin-bottom: 5px;
 }
+
 .content {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
     text-align: left;
-    
+
 }
+
 /* CONTENT FOR THE ABOUS US  */
 
 .content h1 {
     color: white;
     font-size: 100px;
     margin-bottom: 0.5rem;
-    
-   
-    
-    
+
+
+
+
 }
-.content h2{
-color: white;
-font-size: 40px;
-margin-bottom: 0.5rem;
+
+.content h2 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 0.5rem;
 }
-.faq-text{
+
+.faq-text {
     color: black;
     font-size: 20px;
     max-width: 650px;
-    
+
     font-size: 28px;
-    
+
 }
+
 /* CONTENT FOR THE ABOUS US  */
 .about {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
     text-align: left;
-    
+
 }
 
 .about h1 {
     color: white;
     font-size: 100px;
     margin-bottom: 0.5rem;
-    
-   
-    
-    
+
+
+
+
 }
-.about h2{
-color: white;
-font-size: 40px;
-margin-bottom: 0.5rem;
+
+.about h2 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 0.5rem;
 }
-.who-we-are-text{
+
+.who-we-are-text {
     color: black;
     font-size: 20px;
     max-width: 650px;
-    
+
     font-size: 28px;
-    
+
 }
-.black-line{
+
+.black-line {
     border: none;
     height: 2px;
     width: 800px;
     background-color: black;
 }
+
 /* FAQ  */
 
 
@@ -201,10 +218,20 @@ margin-bottom: 0.5rem;
     display: none;
 }
 
-#bars {
+#bars,
+#cart,
+#profile {
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+
+.nav-imgs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 input:checked~.list {
@@ -216,28 +243,30 @@ input:checked~.list {
 }
 
 /* Secondary navbar under part */
-.category-navbar{
-    background-color:lightgreen;
-  
+.category-navbar {
+    background-color: lightgreen;
+
 
 }
-.category-container{
+
+.category-container {
     width: 100%;
     display: flex;
     padding: 0.75rem 1rem;
     width: 100%;
     justify-content: space-between;
 }
-    
 
-.category-button{
-    display:flex ;
+
+.category-button {
+    display: flex;
     flex-direction: column;
     align-items: center;
-   
-    
+
+
 }
-.category-name{
+
+.category-name {
     font-size: 20px;
 }
 
@@ -284,13 +313,21 @@ h2 {
     color: black;
 }
 
-.signup-text a {
+a {
     color: blue;
     text-decoration: none;
 }
 
-.signup-text a:hover {
+a:hover {
     text-decoration: underline;
+}
+
+nav h1 a {
+    color: #e0d1bc
+}
+
+nav h1 a:hover {
+    text-decoration: none !important;
 }
 
 /*PRODUCT PAGE*/
@@ -316,7 +353,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px; 
+    width: 250px;
 
     position: relative;
     display: inline-block;
@@ -352,5 +389,22 @@ h2 {
     opacity: 1;
     transition: all 0.3s ease;
     cursor: pointer;
-    pointer-events: none; 
+    pointer-events: none;
+}
+
+footer {
+    font-family: "inria-serif", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+    background: #56694f;
+    text-align: center;
+    padding: 10px;
+
+    margin-top: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
