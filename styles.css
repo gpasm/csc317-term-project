@@ -317,6 +317,10 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 250px; 
+
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
 }
 
 .image-card img {
@@ -329,4 +333,24 @@ h2 {
     margin-top: 10px;
     font-size: 16px;
     color: #333;
+}
+
+.price-text {
+    color: black;
+}
+
+.prod-button {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: none;
+    border-radius: 20px;
+    font-size: 10px;
+    opacity: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    pointer-events: none; 
 }
