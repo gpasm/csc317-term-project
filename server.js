@@ -1,12 +1,21 @@
 const express = require('express');
 const app = express();
 
-const userRoutes = require('./routes/users');
-const productRoutes = require('./routes/products');
+app.set('view engine', 'ejs');
+app.set('views', './views');
+app.use(express.static('public'));
 
-app.use('/users', userRoutes);
-app.use('/products', productRoutes);
+const pages = ['index', 'login', 'register', 'product', 'user', 'faq', 'about'];
 
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+pages.forEach(page => {
+    app.get(`/${page}`, (req, res) => {
+        res.render(page);
+    });
 });
+
+// Home Page
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
