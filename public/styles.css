@@ -313,6 +313,14 @@ a:hover {
 
 /*PRODUCT PAGE*/
 
+.product-title {
+    top: 0;
+    width: 100%;
+    padding: 1px;
+    text-align: center;
+    font-size: 50px;
+}
+
 .prod-image {
     display: flex;
     flex-wrap: wrap;
@@ -359,7 +367,7 @@ a:hover {
 
 .prod-button {
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px 25px;
@@ -367,11 +375,19 @@ a:hover {
     border: none;
     border-radius: 20px;
     font-size: 10px;
-    opacity: 1;
+    opacity: 0;
     transition: all 0.3s ease;
     cursor: pointer;
     pointer-events: none;
 }
+
+.image-card:hover .prod-button {
+    opacity: 1;
+    transform: translate(-50%, -50%); /* slide into center */
+    pointer-events: auto;
+}
+
+
 
 /*USER PAGE*/
 
