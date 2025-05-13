@@ -1,16 +1,16 @@
 <%- include('partials/header') %>
 
 <main>
-    <h1>Products</h1>
+    <h1 class="product-title">All Products</h1>
     <div class="prod-image">
         <% products.forEach(product => { %>
             <div class="image-card">
                 <img src="<%= product.image_url %>" alt="<%= product.name %>">
                 <a href="/product/<%= product.id %>">
                     <h3><%= product.name %></h3>
-                </a>"
-                <p><%= product.description %></p>
-                <p>$<%= product.price %></p>
+                </a>
+                <p class="image-caption"><%= product.description %></p>
+                <p class="price-text">$<%= product.price %></p>
                 <button class="prod-button">Add to Cart</button>
             </div>
         <% }) %>
