@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<h1>Your Cart</h1>
+
+<% if (cart.length === 0) { %>
+    <p>Your cart is empty.</p>
+<% } else { %>
+    <ul>
+        <% cart.forEach(item => { %>
+            <li>
+                <img src="<%= item.image_url %>" alt="<%= item.name %>" style="width: 100px; height: auto;">
+                <%= item.name %> - $<%= item.price.toFixed(2) %> × <%= item.quantity %>
+            </li>
+        <% }) %>
+    </ul>
+    <p>Total: $<%= total.toFixed(2) %></p>
+<% } %>
+
+<%- include('partials/footer') %>
