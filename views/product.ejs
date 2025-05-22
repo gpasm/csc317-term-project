@@ -1,26 +1,81 @@
 <%- include('partials/header') %>
 
 <main>
-    <h1 class="product-title">All Products</h1>
-    <div class="prod-image">
-        <% products.forEach(product => { %>
-            <div class="image-card">
-                <img src="<%= product.image_url %>" alt="<%= product.name %>">
-                <a href="/product/<%= product.id %>">
-                    <h3><%= product.name %></h3>
-                </a>
-                <p class="image-caption"><%= product.description %></p>
-                <p class="price-text">$<%= product.price %></p>
-                <form method="POST" action="/cart/add">
-                    <input type="hidden" name="id" value="<%= product.id %>">
-                    <input type="hidden" name="name" value="<%= product.name %>">
-                    <input type="hidden" name="price" value="<%= product.price %>">
-                    <input type="hidden" name="image_url" value="<%= product.image_url %>">
-                    <button class="prod-button">Add to Cart</button>
-                </form>
-            </div>
-        <% }) %>
-    </div>
+  <h1 class="product-title">All Products</h1>
+
+  <div class="prod-image">
+    <% products.forEach(product => { %>
+      <div class="image-card">
+        <img src="<%= product.image_url %>" alt="<%= product.name %>">
+        <a href="/product/<%= product.id %>">
+          <h3><%= product.name %></h3>
+        </a>
+        <% if (typeof successId !== 'undefined' && successId == product.id.toString()) { %>
+            <div class="flash-inline">Added to cart!</div>
+          <% } %>
+        <p class="image-caption"><%= product.description %></p>
+        <p class="price-text">$<%= product.price %></p>
+
+        <form class="add-to-cart-form" data-product-id="<%= product.id %>">
+            <input type="hidden" name="id" value="<%= product.id %>">
+            <input type="hidden" name="name" value="<%= product.name %>">
+            <input type="hidden" name="price" value="<%= product.price %>">
+            <input type="hidden" name="image_url" value="<%= product.image_url %>">
+            <button class="prod-button">Add to Cart</button>
+          </form>
+          <div class="flash-inline-container"></div>
+      </div>
+    <% }); %>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const flashes = document.querySelectorAll('.flash-message, .flash-inline');
+      flashes.forEach(flash => {
+        setTimeout(() => {
+          flash.classList.add('fade-out');
+          setTimeout(() => flash.remove(), 1000);
+        }, 2000);
+      });
+    
+      const forms = document.querySelectorAll('.add-to-cart-form');
+  forms.forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = new URLSearchParams(formData);
+
+      try {
+        const res = await fetch('/cart/add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: data.toString()
+        });
+
+        // Show "Added to cart!" message under that button
+        const container = form.nextElementSibling;
+        const msg = document.createElement('div');
+        msg.classList.add('flash-inline');
+        msg.textContent = 'Added to cart!';
+        container.innerHTML = ''; // clear previous messages
+        container.appendChild(msg);
+
+        // Fade out
+        setTimeout(() => {
+          msg.classList.add('fade-out');
+          setTimeout(() => msg.remove(), 1000);
+        }, 2000);
+
+      } catch (error) {
+        console.error('Add to cart failed:', error);
+      }
+    });
+  });
+});
+  </script>
 </main>
 
 <%- include('partials/footer') %>
