@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
             return res.send("Error fetching products");
         }
 
-        res.render('product', { products: rows, search });  //added search
+        res.render('product', { products: rows, search, successId: req.query.success });  //added search
     });
 });
 
