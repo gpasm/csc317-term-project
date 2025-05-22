@@ -7,7 +7,7 @@
             <p><strong>Description:</strong> <%= product.description %></p>
             <p><strong>Price:</strong> $<%= product.price %></p>
             <input type="hidden" name="productId" value="<%= product.id %>">
-            <form method="POST" action="/cart/add">
+            <form class="add-to-cart-form" data-product-id="<%= product.id %>">
                 <input type="hidden" name="id" value="<%= product.id %>">
                 <input type="hidden" name="name" value="<%= product.name %>">
                 <input type="hidden" name="price" value="<%= product.price %>">
@@ -15,6 +15,9 @@
                 <button class="product-button">Add to Cart</button>
             </form>
         </div>
+        <div class="flash-inline-container"></div>
+    </div>
     </main>
+</body>
 
 <%- include('partials/footer') %>
