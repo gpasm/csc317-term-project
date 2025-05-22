@@ -51,6 +51,42 @@ const db = new sqlite3.Database(path.join(__dirname, 'website.db'), (err) => {
                 });
             }
         });
+        db.run(`
+            CREATE TABLE IF NOT EXISTS users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT UNIQUE NOT NULL,
+                password TEXT NOT NULL
+            );
+        `, (err) => {
+            if (err) {
+                console.log('Error creating users table:', err.message);
+            } else {
+                console.log('Users table created or already exists.');
+            }
+        });
     }
 });
-module.exports=db;
+
+// Exporting both the database instance and helper functions
+module.exports = {
+    db,  // Keep the original db reference
+    getUserByUsername: function (username) {
+        return new Promise((resolve, reject) => {
+            db.get(`SELECT * FROM users WHERE username = ?`, [username], (err, row) => {
+                if (err) reject(err);
+                else resolve(row);
+            });
+        });
+    },
+
+    createUser: function (username, hashedPassword) {
+        return new Promise((resolve, reject) => {
+            db.run(`INSERT INTO users (username, password) VALUES (?, ?)`,
+                [username, hashedPassword],
+                function (err) {
+                    if (err) reject(err);
+                    else resolve({ id: this.lastID, username });
+                });
+        });
+    }
+};
