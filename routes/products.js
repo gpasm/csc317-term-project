@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../data/db');
+const { db } = require('../data/db');
 
 router.get('/', (req, res) => {
     const search = req.query.search || '';                    //for search bar
