@@ -14,7 +14,10 @@
         <div class="main-menu">
             <nav>
                 <h1><a href="/index">STORE WEBSITE</a></h1>
-                <input type="text" placeholder="Search..">
+                <form action="/product" method="GET" class="search-form">
+                    <input type="text" name="search" value="<%= typeof search !== 'undefined' ? search : '' %>" placeholder="Search like you mean it" />
+                    <button type="submit">🔍</button>
+                  </form>                           
                 <div class="nav-imgs">
                     <a href="/"><img src="https://friconix.com/png/fi-xnluhs-shopping-cart.png" 
                             alt="shopping cart icon" id="cart" /></a>
