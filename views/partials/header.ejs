@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Store Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/mvz3hqw.css">
 </head>
 
@@ -19,9 +19,9 @@
                     <button type="submit">🔍</button>
                   </form>                           
                 <div class="nav-imgs">
-                    <a href="/"><img src="https://friconix.com/png/fi-xnluhs-shopping-cart.png" 
+                    <a href="<%= loggedIn ? '/cart' : '/login' %>"><img src="https://friconix.com/png/fi-xnluhs-shopping-cart.png" 
                             alt="shopping cart icon" id="cart" /></a>
-                    <a href="/login"><img src="https://friconix.com/png/fi-cnluxs-user-circle-solid.png"
+                    <a href="<%= loggedIn ? '/user' : '/login' %>"><img src="https://friconix.com/png/fi-cnluxs-user-circle-solid.png"
                             alt="profile icon" id="profile" /></a>
                 </div>
             </nav>
