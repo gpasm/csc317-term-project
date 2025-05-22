@@ -13,8 +13,10 @@
             <button onclick="location.href=''">Your Saved Cards</button>
             <button onclick="location.href=''">Saved Addresses</button>
             <button onclick="location.href=''">Your Orders</button>
-            <button onclick="location.href=''">Account Settings</button>
+            <form action="/auth/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
         </div>
     </section>
 
-    <%- include('partials/footer') %>
+<%- include('partials/footer') %>
