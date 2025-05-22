@@ -720,3 +720,78 @@ a:hover {
     cursor: pointer;
     margin-bottom: 20px;
 }
+
+@media (max-width: 600px) {
+
+    body {
+      flex-direction: column;
+      height: auto; 
+    }
+
+ 
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+
+
+    .title,
+    .product-title,
+    .content h1,
+    .content h2 {
+      font-size: smaller; 
+    }
+
+
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    .search-form input[type="text"] {
+      width: 100%;
+      max-width: none;
+    }
+
+    .category-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+
+    .prod-image {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+
+    .cart-page-wrapper {
+      flex-direction: column;
+      gap: 20px;
+      margin: 20px;
+    }
+
+    .cart-total-box,
+    .shipping-container {
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+
+    .account-buttons button,
+    .continue-button,
+    .buy-button {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .shipping-container input[type="text"] {
+      width: 100%;
+    }
+  }
