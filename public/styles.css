@@ -383,6 +383,10 @@ a:hover {
     border-radius: 10px;
 }
 
+.image-card a {
+    color: #333;
+}
+
 .image-caption {
     margin-top: 10px;
     font-size: 16px;
@@ -531,8 +535,19 @@ a:hover {
 
 .product-detail h1 {
     font-size: 32px; 
-  }
+}
   
-  .product-detail p {
+.product-detail p {
     font-size: 32px
-  }
+}
+
+.product-button {
+    padding: 15px 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: none;
+    border-radius: 20px;
+    font-size: 10px;
+    cursor: pointer;
+    pointer-events: none;
+    margin-bottom: 20px;
+}
