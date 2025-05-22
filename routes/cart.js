@@ -17,7 +17,9 @@ router.post('/add', (req, res) => {
         req.session.cart.push({ id, name, price: parseFloat(price), image_url, quantity: 1 });
     }
 
-    res.redirect(req.get('Referer') || '/product'); //so it can stay on products page
+    req.flash('success_msg', `${name} added to cart!`);
+    // res.redirect(req.get('Referer') || '/product'); //so it can stay on products page
+    res.sendStatus(200);
 
 })
 
