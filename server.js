@@ -3,6 +3,7 @@ const session = require('express-session');
 const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const flash = require('connect-flash');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -10,6 +11,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(flash());
 
 app.use(session({
     secret: 'your-secret-key',
@@ -21,6 +23,7 @@ app.use(session({
 app.use((req, res, next) => {
     res.locals.loggedIn = !!req.session.userId;
     res.locals.username = req.session.username || null;
+    res.locals.success_msg = req.flash('success_msg');
     next();
 });
 
@@ -49,7 +52,6 @@ pages.forEach(page => {
 app.get('/', (req, res) => {
     res.render('index');
 });
-
 
 
 
