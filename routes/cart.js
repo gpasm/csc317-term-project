@@ -30,4 +30,15 @@ router.get('/', requireLogin, (req, res) => {
     res.render('cart', {cart, total });
 });
 
+router.post('/delete', (req, res) => {
+    const { id } = req.body;
+  
+    if (req.session.cart) {
+      req.session.cart = req.session.cart.filter(item => item.id !== id);
+    }
+  
+    res.redirect('/cart');
+  });
+  
+
 module.exports = router;
