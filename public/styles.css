@@ -717,6 +717,5 @@ a:hover {
     border-radius: 20px;
     font-size: 10px;
     cursor: pointer;
-    pointer-events: none;
     margin-bottom: 20px;
 }
