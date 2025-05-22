@@ -22,6 +22,11 @@
                                     </p>
                                     <p>Subtotal: $<%= (item.price * item.quantity).toFixed(2) %>
                                     </p>
+
+                                    <form action="/cart/delete" method="POST" class="delete-cart-form">
+                                        <input type="hidden" name="id" value="<%= item.id %>">
+                                        <button type="submit" class="delete-button">Remove</button>
+                                      </form>
                                 </div>
                             </div>
                             <% }) %>
