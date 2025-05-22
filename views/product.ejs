@@ -55,15 +55,15 @@
           body: data.toString()
         });
 
-        // Show "Added to cart!" message under that button
+        
         const container = form.nextElementSibling;
         const msg = document.createElement('div');
         msg.classList.add('flash-inline');
         msg.textContent = 'Added to cart!';
-        container.innerHTML = ''; // clear previous messages
+        container.innerHTML = ''; 
         container.appendChild(msg);
 
-        // Fade out
+        
         setTimeout(() => {
           msg.classList.add('fade-out');
           setTimeout(() => msg.remove(), 1000);

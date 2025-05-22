@@ -200,9 +200,9 @@ img {
 .image:hover .shop-button {
     opacity: 1;
     pointer-events: auto;
-    /* Allow interaction once visible */
+   
     transform: translate(-50%, 0%);
-    /* Slight move for animation effect */
+  
 }
 
 /* Secondary navbar under part */
@@ -515,3 +515,24 @@ a:hover {
 .fade-out {
     opacity: 0;
 }
+
+.price-text{
+    font-weight: bold;
+    font-size: 22px;
+}
+.image-caption{
+    font-size: 22px;
+}
+
+.first-text h1{
+    color: black;
+    
+}
+
+.product-detail h1 {
+    font-size: 32px; 
+  }
+  
+  .product-detail p {
+    font-size: 32px
+  }

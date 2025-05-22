@@ -32,7 +32,7 @@ const db = new sqlite3.Database(path.join(__dirname, 'website.db'), (err) => {
                     { name: 'Orange Orioles Baseball Jersey', description: 'Orange Orioles Baseball Jersey', price: 15.00, image_url: 'images/pexels-ogproductionz-17243659.jpg' },
                     { name: 'Pink Floyd Longsleeve', description: 'Pink Floyd Longsleeve', price: 50.00, image_url: 'images/pexels-ogproductionz-17244554.jpg' },
                     { name: 'Denim Skirt', description: 'Light Wash Denim Skirt', price: 20.00, image_url: 'images/pexels-ogproductionz-17245477.jpg' },
-                    { name: 'Speedracer Jacket', description: 'Black and white Leather Jacket', price: 60.00, image_url: 'images/pexels-weezy-mie-276311990-12928822.jpg' },
+                    { name: 'Speedracer Jacket', description: 'Black and white Leather Jacket', price: 60.00, image_url: 'images/sp3d.webp' },
                     { name: 'Purple Set', description: 'Light Purple Set', price: 15.00, image_url: 'images/pexels-weezy-mie-276311990-12928822.jpg' }
                 ];
 

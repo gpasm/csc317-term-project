@@ -13,7 +13,7 @@
     <header>
         <div class="main-menu">
             <nav>
-                <h1><a href="/index">STORE WEBSITE</a></h1>
+                <h1><a href="/index">EverBright Clothing</a></h1>
                 <form action="/product" method="GET" class="search-form">
                     <input type="text" name="search" value="<%= typeof search !== 'undefined' ? search : '' %>" placeholder="Search like you mean it 🔎" />
                   </form>                           
@@ -22,6 +22,10 @@
                             alt="shopping cart icon" id="cart" /></a>
                     <a href="<%= loggedIn ? '/user' : '/login' %>"><img src="https://friconix.com/png/fi-cnluxs-user-circle-solid.png"
                             alt="profile icon" id="profile" /></a>
+                    <a href="/about"><img src="https://friconix.com/png/fi-cnsuxt-question-mark.png"
+                                alt="profile icon" id="profile" /></a>
+                     <a href="/faq"><img src="https://friconix.com/png/fi-ctluxt-info-solid.png"
+                                    alt="profile icon" id="profile" /></a>
                 </div>
             </nav>
         </div>
