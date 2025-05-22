@@ -24,6 +24,34 @@ main {
 
 /* NAV */
 
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .search-form input[type="text"] {
+    width: 250px;            /*wider */
+    padding: 8px 12px;       
+    background-color: #f0f0f0;  
+    border: 1px solid #ccc;  
+    border-radius: 16px;      /* Rounded corners */
+    font-size: 16px;         /* Slightly bigger font */
+    transition: background-color 0.3s ease;
+  }
+
+  .search-form input[type="text"]:focus {
+    background-color: #56694f;  
+    outline: none;              
+    border-color: #e0d1bc;
+  }
+
+  .search-form input[type="text"]:focus::placeholder {
+    color: #e0d1bc;  
+    opacity: 1;   
+  }  
+  
+
 header {
     background: #56694f;
     position: sticky;
