@@ -7,7 +7,7 @@ Welcome to our website, EverBright Clothing, where we design and deliver fashion
 
 
 To Run This Program Use The Following:
-1:git clone <This-repo-url> 
+1:git clone "This-repo-url"
 2: Install the following:
 -npm install node
 -npm install sqlite3
