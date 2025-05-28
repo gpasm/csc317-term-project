@@ -22,10 +22,10 @@ const db = new sqlite3.Database(path.join(__dirname, 'website.db'), (err) => {
 
                 
                 const products = [
-                    { name: 'Green Blouse & Skirt', description: 'A green blouse and skirt set', price: 50.00, image_url: 'https://images.pexels.com/photos/9770969/pexels-photo-9770969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
-                    { name: 'Sage Sweater', description: 'A sage green sweater', price: 20.00, image_url: 'https://images.pexels.com/photos/19592493/pexels-photo-19592493/free-photo-of-model-in-a-mint-green-sweatshirt-and-a-golden-mini-skirt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
-                    { name: 'Navy Set', description: 'A navy blue top and shorts set', price: 60.00, image_url: 'https://images.pexels.com/photos/8050052/pexels-photo-8050052.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load' },
-                    { name: 'Pink Long Sleeve', description: 'A pink long sleeve top', price: 15.00, image_url: 'https://images.pexels.com/photos/2703202/pexels-photo-2703202.jpeg?auto=compress&cs=tinysrgb&w=1600' },
+                    { name: 'Green Blouse & Skirt', description: 'A green blouse and skirt set', price: 50.00, image_url: 'images/greemslort.jpeg' },
+                    { name: 'Sage Sweater', description: 'A sage green sweater', price: 20.00, image_url: 'images/greensweater.jpeg' },
+                    { name: 'Navy Set', description: 'A navy blue top and shorts set', price: 60.00, image_url: 'images/blue.webp' },
+                    { name: 'Pink Long Sleeve', description: 'A pink long sleeve top', price: 15.00, image_url: 'images/pink.webp' },
                     { name: 'Denim Jacket', description: 'Oversized Denim Jacket', price: 50.00, image_url: 'images/pexels-cottonbro-6770908.jpg' },
                     { name: 'White Cube Tank top', description: 'White Cube Tank top', price: 20.00, image_url: 'images/pexels-ogproductionz-17243502.jpg' },
                     { name: 'Black Sleeveless Tubetop', description: 'Black Sleeveless Tubetop ', price: 60.00, image_url: 'images/pexels-ogproductionz-17243567.jpg' },
@@ -69,7 +69,7 @@ const db = new sqlite3.Database(path.join(__dirname, 'website.db'), (err) => {
 
 // Exporting both the database instance and helper functions
 module.exports = {
-    db,  // Keep the original db reference
+    db,  
     getUserByUsername: function (username) {
         return new Promise((resolve, reject) => {
             db.get(`SELECT * FROM users WHERE username = ?`, [username], (err, row) => {

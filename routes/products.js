@@ -3,7 +3,7 @@ const router = express.Router();
 const { db } = require('../data/db');
 
 router.get('/', (req, res) => {
-    const search = req.query.search || '';                    //for search bar
+    const search = req.query.search || '';                    // search bar
     let query = "SELECT * FROM products";
     let params = [];
 

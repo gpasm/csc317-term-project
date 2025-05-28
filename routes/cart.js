@@ -9,7 +9,7 @@ router.post('/add', (req, res) => {
         req.session.cart = [];
     }
 
-    //Checking if item is already in cart?
+    
     const existingItem = req.session.cart.find(item => item.id === id);
     if (existingItem) {
         existingItem.quantity += 1;
